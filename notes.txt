@@ -1,0 +1,8 @@
+Eyes (783-786?)
+== Male ==
+Default (Red/Brown) - 56 17 10  #38110A
+Blue - 83 109 148 #536D94
+Green - 73 84 32 #495420
+
+== Female ==
+Default (Purple) - 83 6 140 #53068C
