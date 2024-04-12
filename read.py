@@ -5,7 +5,8 @@ relpath1 = "Characters/Obi_Wan_Kenobi.chf"
 filepath1 = os.path.join(script_dir, relpath1)
 data = open(filepath1, 'rb').read()
 
-relpath2 = "Characters/jSchlatt.chf"
+relpath2 = "Characters/Walter_White.chf"
+#relpath2 = "Characters/jSchlatt.chf"
 filepath2 = os.path.join(script_dir, relpath2)
 data2 = open(filepath2, 'rb').read()
 
@@ -63,7 +64,7 @@ something26 = data[621:1014] # changed
 # variable length, find first instance TODO
 deadbeef = data[1014:4089] # unchanged
 
-eof = data[4089:4091] # changed
+eof = data[4089:4091] # changed, always 3 bytes?
 
 # DEADBEEF padding to reach 4k file size
 
