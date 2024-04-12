@@ -1,15 +1,19 @@
 import os
+import re
 
 script_dir = os.path.dirname(__file__)
 #first_file = "Characters/M_Default.chf" # default male
-first_file = "Characters/M_Default.chf" # default female
+#first_file = "Characters/F_Default.chf" # default female
+first_file = "Characters/F_Eyes_Brown.chf"
 filepath1 = os.path.join(script_dir, first_file)
 data = open(filepath1, 'rb').read()
+data_hex = data.hex().upper()
 
 #second_file = "Characters/F_Default.chf" # default female
 second_file = "Characters/F_Eyes_Brown.chf"
 filepath2 = os.path.join(script_dir, second_file)
 data2 = open(filepath2, 'rb').read()
+data_hex2 = data2.hex().upper()
 
 def print_something(starting_idx, idx, changed):
     print("something"+str(somethingCount)+" = data["+str(starting_idx)+":"+str(idx)+"].hex(\' \') #"+(" changed" if changed else " unchanged"))
@@ -51,8 +55,8 @@ something6 = data[23:25].hex(' ')
 
 identifier2 = data[25:26].hex(' ') # always unchanged - 00
 
-eye_color = data[783:786].hex() # RGB values
-eye_color2 = data2[783:786].hex()
+# eye color always seems to be between these two values; possibly adds 3 extra bits to end, ie FF FF FF 00 00 00
+eye_color = re.search("C4369700AC342A44(.*)584D4227", data_hex).group(1)
 
 # variable length, find first instance TODO
 deadbeef = data[1014:4089].hex(' ') # unchanged
