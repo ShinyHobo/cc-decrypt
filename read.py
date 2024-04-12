@@ -6,7 +6,7 @@ filepath = os.path.join(script_dir, relpath)
 
 data = open(filepath, 'rb').read()
 
-signature = data[:4] # always the same
+signature = data[:4] # always the same: 42 42 00 00
 something1 = data[4:9] # changed
 something2 = data[9:23] # unchanged
 something3 = data[23:24] # changed
